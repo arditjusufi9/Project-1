@@ -1,0 +1,23 @@
+
+
+
+  <div class="searchbox">
+    <input type="text" placeholder="Search images (4+ characters)" [(ngModel)]="searchQuery" (input)="onSearch()" class="search-input">
+  </div>
+  
+  <div class="gallery">
+    <div *ngFor="let image of flickrImages" class="image">
+      <img [src]="getImageUrl(image)" alt="Flickr Image">
+      <div class="image-details">
+        <p>{{ image.title }}</p>
+        <p>{{ image.author }}</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="loadingrrumbullak" *ngIf="loading">
+    <div class="rrumbullak">
+    <p>Loading...</p>
+    </div>
+  </div>
+  
